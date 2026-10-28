@@ -41,3 +41,19 @@ CONFIG_ATH11K_MEM_PROFILE_512M=y
 
 CONFIG_PACKAGE_sqm-scripts-nss=y
 CONFIG_PACKAGE_kmod-qca-nss-crypto=y
+
+
+# 1. 完整的 hostapd/wpad（提供 WPA3-SAE / 802.11s 加密支持，非常关键）
+CONFIG_PACKAGE_wpad-mesh-openssl=y
+# 或者选择 wpad-openssl / wpad-mbedtls（如果空间紧张可用 wpad-mesh-mbedtls）
+
+# 2. 基础无线工具与 802.11s 支持
+CONFIG_PACKAGE_iw=y
+CONFIG_PACKAGE_wireless-tools=y
+
+# 3. 漫游与节点管理辅助（802.11k/v/r 支持与自动选路，可选）
+CONFIG_PACKAGE_usteer=y
+CONFIG_PACKAGE_dawn=y
+
+# 4. 简易 Web 界面可视化管理（可选，方便在 LuCI 里点选）
+CONFIG_PACKAGE_luci-app-easy-mesh=y
